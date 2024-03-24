@@ -251,7 +251,7 @@ const App = () => {
             }
           }
         }`
-
+        
       monday.api(query).then((res) => {
         console.log("Update res: ", res)
       }).catch((err) => {
@@ -302,20 +302,35 @@ const App = () => {
             <Button onClick={calculate}>Calculate</Button>
           </div>
         </div>
-        <div className="row pt-3">
+        <div className="row pt-3 mx-auto align-items-center">
           <div className="col">
-            <AttentionBox
-              title="Hello Monday Apps!"
-              text={'Vinyl: ' + vinyls + ' Job Cost: ' + jobCost}
-              type="success"
-            />
+            <div className="row">
+              <div className="col">
+                <Label text="Cost of Goods Sold:" />
+              </div>
+              <div className="col">
+                <TextField value={jobCost ? jobCost.costOfGoodsPerPrintJob : ''} />
+              </div>
+            </div>
+            <div className="row pt-1">
+              <div className="col">
+                <Label text="Per Item Sale:" />
+              </div>
+              <div className="col">
+                <TextField value={jobCost ? jobCost.perPrintTotal : ''} />
+              </div>
+            </div>
+            <div className="row pt-1">
+              <div className="col">
+                <Label text="Total Sale:" />
+              </div>
+              <div className="col">
+                <TextField value={jobCost ? jobCost.jobTotal : ''} />
+              </div>
+            </div>
           </div>
           <div className="col">
-            <AttentionBox
-              title="Hello Monday Apps!"
-              text={'Vinyl: ' + vinyls + ' Job Cost: ' + jobCost}
-              type="success"
-            />
+            
           </div>
         </div>
       </div>

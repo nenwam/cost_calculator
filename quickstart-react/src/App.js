@@ -57,6 +57,7 @@ const App = () => {
               // Uncomment or edit according to the header you need to set
               // 'Origin': 'http://your-origin.com',
               'X-Requested-With': 'XMLHttpRequest',
+              'Content-Type': 'application/json'
               // Add other headers as needed
             };
 
